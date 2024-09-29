@@ -20,9 +20,6 @@ from urllib.parse import urlparse
 from assets import PRICING
 import os
 from pydantic import BaseModel
-import chromedriver_autoinstaller
-
-chromedriver_autoinstaller.install()
 
 
 def serialize_pydantic(obj):

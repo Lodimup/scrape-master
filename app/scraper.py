@@ -4,20 +4,18 @@ import time
 import re
 import json
 from datetime import datetime
-from typing import List, Dict, Type
+from typing import List, Type
 
 import pandas as pd
 from bs4 import BeautifulSoup
-from pydantic import BaseModel, Field, create_model
+from pydantic import BaseModel, create_model
 import html2text
 import tiktoken
 
 from dotenv import load_dotenv
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -35,17 +33,16 @@ load_dotenv()
 
 def setup_selenium():
     options = Options()
-
-    # Randomly select a user agent from the imported list
     user_agent = random.choice(USER_AGENTS)
     options.add_argument(f"user-agent={user_agent}")
-
-    # Add other options
     for option in HEADLESS_OPTIONS:
         options.add_argument(option)
 
-    # Initialize the WebDriver
-    driver = webdriver.Chrome(options=options)
+    # Connect to Selenium Grid hub
+    driver = webdriver.Remote(
+        command_executor=os.environ["SELENIUM_GRID_COMMAND_EXECUTOR"],
+        options=options,
+    )
     return driver
 
 
