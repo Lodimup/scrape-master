@@ -4,7 +4,7 @@ that are used across different parts of the application.
 """
 
 # List of user agents to mimic different users
-USER_AGENTS  = [
+USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0",
@@ -66,23 +66,23 @@ USER_AGENTS  = [
 PRICING = {
     "gpt-4o-mini": {
         "input": 0.150 / 1_000_000,  # $0.150 per 1M input tokens
-        "output": 0.600 / 1_000_000, # $0.600 per 1M output tokens
+        "output": 0.600 / 1_000_000,  # $0.600 per 1M output tokens
     },
     "gpt-4o-2024-08-06": {
         "input": 2.5 / 1_000_000,  # $2.5 per 1M input tokens
-        "output": 10 / 1_000_000, # $10 per 1M output tokens
+        "output": 10 / 1_000_000,  # $10 per 1M output tokens
     },
     "gemini-1.5-flash": {
         "input": 0.075 / 1_000_000,  # $0.075 per 1M input tokens
-        "output": 0.30 / 1_000_000, # $0.30 per 1M output tokens
+        "output": 0.30 / 1_000_000,  # $0.30 per 1M output tokens
     },
     "Llama3.1 8B": {
-        "input": 0 ,  # Free
-        "output": 0 , # Free
+        "input": 0,  # Free
+        "output": 0,  # Free
     },
     "Groq Llama3.1 70b": {
-        "input": 0 ,  # Free
-        "output": 0 , # Free
+        "input": 0,  # Free
+        "output": 0,  # Free
     },
     # Add other models and their prices here if needed
 }
@@ -94,17 +94,18 @@ TIMEOUT_SETTINGS = {
 }
 
 # Other reusable constants or configuration settings
-HEADLESS_OPTIONS = ["--disable-gpu", "--disable-dev-shm-usage","--window-size=1920,1080","--disable-search-engine-choice-screen"]
+HEADLESS_OPTIONS = ["--disable-gpu", "--disable-dev-shm-usage",
+                    "--window-size=1920,1080", "--disable-search-engine-choice-screen"]
 
-#in case you don't need to open the website
-HEADLESS_OPTIONS=HEADLESS_OPTIONS+[ "--headless=new"]
+# in case you don't need to open the website
+# HEADLESS_OPTIONS=HEADLESS_OPTIONS+[ "--headless=new"]
 
-#number of scrolls
-NUMBER_SCROLL=2
+# number of scrolls
+NUMBER_SCROLL = 2
 
 
-LLAMA_MODEL_FULLNAME="lmstudio-community/Meta-Llama-3.1-8B-Instruct-GGUF"
-GROQ_LLAMA_MODEL_FULLNAME="llama-3.1-70b-versatile"
+LLAMA_MODEL_FULLNAME = "lmstudio-community/Meta-Llama-3.1-8B-Instruct-GGUF"
+GROQ_LLAMA_MODEL_FULLNAME = "llama-3.1-70b-versatile"
 
 SYSTEM_MESSAGE = """You are an intelligent text extraction and conversion assistant. Your task is to extract structured information
                         from the given text and convert it into a pure JSON format. The JSON should contain only the structured data extracted from the text,
@@ -113,9 +114,6 @@ SYSTEM_MESSAGE = """You are an intelligent text extraction and conversion assist
                         Please process the following text and provide the output in pure JSON format with no words before or after the JSON:"""
 
 USER_MESSAGE = f"Extract the following information from the provided text:\nPage content:\n\n"
-
-
-
 
 
 PROMPT_PAGINATION = """
