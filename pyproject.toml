@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "scrape-master"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+openai = "^1.50.2"
+python-dotenv = "^1.0.1"
+pandas = "^2.2.3"
+pydantic = "^2.9.2"
+requests = "^2.32.3"
+beautifulsoup4 = "^4.12.3"
+html2text = "^2024.2.26"
+tiktoken = "^0.7.0"
+selenium = "^4.25.0"
+readability-lxml = "^0.8.1"
+streamlit = "^1.38.0"
+streamlit-tags = "^1.2.8"
+openpyxl = "^3.1.5"
+groq = "^0.11.0"
+google-generativeai = "^0.8.2"
+chromedriver-autoinstaller = "^0.6.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
