@@ -97,7 +97,7 @@ TIMEOUT_SETTINGS = {
 HEADLESS_OPTIONS = ["--disable-gpu", "--disable-dev-shm-usage","--window-size=1920,1080","--disable-search-engine-choice-screen"]
 
 #in case you don't need to open the website
-##HEADLESS_OPTIONS=HEADLESS_OPTIONS+[ "--headless=new"]
+HEADLESS_OPTIONS=HEADLESS_OPTIONS+[ "--headless=new"]
 
 #number of scrolls
 NUMBER_SCROLL=2

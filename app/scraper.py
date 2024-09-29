@@ -44,11 +44,8 @@ def setup_selenium():
     for option in HEADLESS_OPTIONS:
         options.add_argument(option)
 
-    # Specify the path to the ChromeDriver
-    service = Service(r"./chromedriver-win64/chromedriver.exe")
-
     # Initialize the WebDriver
-    driver = webdriver.Chrome(service=service, options=options)
+    driver = webdriver.Chrome(options=options)
     return driver
 
 

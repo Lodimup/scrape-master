@@ -12,7 +12,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pipx install poetry && poetry install",
+	"postCreateCommand": "pipx install poetry && poetry install && sudo apt update && apt-get install chromium -y",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
